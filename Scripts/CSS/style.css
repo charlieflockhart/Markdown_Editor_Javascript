@@ -1,0 +1,87 @@
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #000;
+    --container-bg: white;
+    --border-color: #ccc;
+    --button-bg: #007bff;
+    --button-hover: #0056b3;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #fff;
+    --container-bg: #1e1e1e;
+    --border-color: #333;
+    --button-bg: #0d6efd;
+    --button-hover: #0a58ca;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--container-bg);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--container-bg);
+    color: var(--text-color);
+}
+
+.preview {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--container-bg);
+    min-height: 200px;
+    text-align: left;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--button-bg);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+#counter {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+    text-align: right;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
