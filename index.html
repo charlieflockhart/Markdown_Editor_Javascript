@@ -3,61 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Editor</title>
-    <link rel="stylesheet" href="Scripts/CSS/style.css">
+    <title>Card Links</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <button id="theme-toggle">Toggle Dark Mode</button>
-        <h1>Markdown Editor</h1>
-        <div id="notification" class="notification"></div>
-        <div class="status-bar">
-            <span id="save-status">💾 Saved</span>
-        </div>
-        <div id="findReplaceModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeFindReplaceModal()">&times;</span>
-                <h2>Find & Replace</h2>
-                <input type="text" id="findText" placeholder="Find..." oninput="highlightMatches()">
-                <input type="text" id="replaceText" placeholder="Replace with">
-                <button id="replaceBtn">Replace</button>
-                <button id="replaceAllBtn">Replace All</button>
-            </div>
-        </div>        
-        <textarea id="markdown-input" placeholder="Write your markdown here..."></textarea>
-        <div id="counter">Words: 0 | Characters: 0</div>
-        <div id="preview" class="preview"></div>
-
-        <br>
-        <hr>
-
-        <input type="file" id="import-md" accept=".md" style="display: none;">
-        <button onclick="document.getElementById('import-md').click();">Import Markdown</button>
-
-        <input type="file" id="import-html" accept=".html" style="display: none;">
-        <button onclick="document.getElementById('import-html').click();">Import HTML</button>
-
-        <hr>
-        <button onclick="exportFile('md')">Export as Markdown</button>
-        <button onclick="exportFile('html')">Export as HTML</button>
-
-        
+    <div class="card">
+        <a href="markdown.html">Go to Markdown Editor</a>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turndown/7.1.2/turndown.min.js"></script>
-    <script defer src="Scripts/JS/main.js"></script>
-    <script defer src="Scripts/JS/editor.js"></script>
-    <script defer src="Scripts/JS/storage.js"></script>
-    <script defer src="Scripts/JS/export.js"></script>
-    <script defer src="Scripts/JS/import.js"></script>
-    <script defer src="Scripts/JS/theme.js"></script>
-    <script defer src="Scripts/JS/shortcuts.js"></script>
-    <script defer src="Scripts/JS/counter.js"></script>
-    <script defer src="Scripts/JS/history.js"></script>
-    <script defer src="Scripts/JS/saveStatus.js"></script>
-    <script defer src="Scripts/JS/notifications.js"></script>
-    <script defer src="Scripts/JS/findReplace.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.12/marked.min.js"></script> -->
+    <div class="card">
+        <a href="sql.html">Go to SQL Editor</a>
+    </div>
 </body>
 </html>
