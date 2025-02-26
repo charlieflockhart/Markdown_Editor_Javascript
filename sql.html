@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel to SQL</title>
+    <link rel="stylesheet" href="Scripts/CSS/SQL_Style/style.css">
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='index.html';">Back to Index</button>
+        <h1>Excel to SQL</h1>
+        
+        <!-- Import File Buttons -->
+        <h2>Import CSV</h2>
+        <input type="file" id="importCSV" onchange="importCSV(event)">
+        <button onclick="document.getElementById('importCSV').click()">Import CSV</button>
+        <button onclick="exportTableToCSV()">Export Table to CSV</button>
+
+        <!-- CSV Table View -->
+        <div id="csvTable"></div>
+
+        <!-- SQL Input View -->
+        <h2>SQL Query</h2>
+        <textarea id="sqlInput" readonly></textarea>
+
+        <button onclick="exportSQL()">Export SQL</button>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script defer src="Scripts/JS/SQL_Scripts/csv_Table.js"></script>
+    <script defer src="Scripts/JS/SQL_Scripts/import.js"></script>
+    <script defer src="Scripts/JS/SQL_Scripts/export.js"></script>
+</body>
+</html>
