@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 2000px;
     margin: 20px auto;
     padding: 20px;
     background: var(--container-bg);
@@ -151,6 +151,3 @@ em {
     font-size: 20px;
     font-weight: bold;
 }
-
-
-

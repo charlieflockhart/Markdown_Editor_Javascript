@@ -36,7 +36,7 @@ function displayCSVTable(data) {
 
             if (rowIndex !== 0) {
                 td.contentEditable = "true";
-                td.style.backgroundColor = "#fff3cd";
+                td.style.backgroundColor = "var(--input-bg)";
                 td.addEventListener("input", updateSQLFromTable);
             }
 
@@ -46,48 +46,16 @@ function displayCSVTable(data) {
     });
 
     tableContainer.appendChild(table);
+
+    // Save the table data to localStorage
+    localStorage.setItem("csvData", JSON.stringify(data));
+
+    // Apply background color to each cell
+    const cells = table.querySelectorAll("td, th");
+    cells.forEach(cell => {
+        cell.style.backgroundColor = "var(--container-bg)";
+    });
 }
-
-
-
-// Main function
-// Parse the CSV input and display the table and SQL input
-
-function parseCSV(text) {
-    const rows = [];
-    let row = [];
-    let cell = "";
-    let insideQuotes = false;
-
-    for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-
-        if (char === '"' && (i === 0 || text[i - 1] !== "\\")) {
-            insideQuotes = !insideQuotes;
-        } else if (char === "," && !insideQuotes) {
-            row.push(cell);
-            cell = "";
-        } else if (char === "\n" && !insideQuotes) {
-            row.push(cell);
-            rows.push(row);
-            row = [];
-            cell = "";
-        } else {
-            cell += char;
-        }
-    }
-    
-    if (cell) row.push(cell);
-    if (row.length > 0) rows.push(row);
-
-    return rows;
-}
-
-
-
-// Event listeners
-// Listen for changes in the CSV input textarea
-// Listen for changes in the table cells to update the SQL input
 
 function updateSQLInput(data) {
     if (data.length < 2) return;
@@ -98,8 +66,15 @@ function updateSQLInput(data) {
         sqlText += `(${values})`;
         sqlText += index < data.length - 2 ? ",\n" : ";";
     });
-    document.getElementById("sqlInput").value = sqlText;
+
+    const sqlInput = document.getElementById("sqlInput");
+    if (sqlInput) {
+        sqlInput.value = sqlText;
+        // Save SQL data to localStorage
+        localStorage.setItem("sqlData", sqlText);
+    }
 }
+
 
 function updateSQLFromTable() {
     const tableRows = document.querySelectorAll("#csvTable table tr");
@@ -111,4 +86,5 @@ function updateSQLFromTable() {
 
     updateSQLInput(data);
 }
+
 
