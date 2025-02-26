@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function saveState() {
         if (!isTyping) {
             history.push(textarea.value);
-            if (history.length > 50) history.shift(); // Limit history size
+            if (history.length > 300) history.shift(); // Limit history size
             redoStack = []; // Clear redo stack when a new edit occurs
         }
     }

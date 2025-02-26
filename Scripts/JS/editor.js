@@ -17,3 +17,13 @@ marked.setOptions({
     breaks: true, // Preserve line breaks
     gfm: true     // Enable GitHub-flavored markdown
 });
+
+
+document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.key === "a") {
+        event.preventDefault(); // Prevents default "Select All" behavior
+        const textarea = document.getElementById("markdown-input");
+        textarea.focus();
+        textarea.select();
+    }
+});
