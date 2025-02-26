@@ -14,6 +14,16 @@
         <div class="status-bar">
             <span id="save-status">💾 Saved</span>
         </div>
+        <div id="findReplaceModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFindReplaceModal()">&times;</span>
+                <h2>Find & Replace</h2>
+                <input type="text" id="findText" placeholder="Find..." oninput="highlightMatches()">
+                <input type="text" id="replaceText" placeholder="Replace with">
+                <button id="replaceBtn">Replace</button>
+                <button id="replaceAllBtn">Replace All</button>
+            </div>
+        </div>        
         <textarea id="markdown-input" placeholder="Write your markdown here..."></textarea>
         <div id="counter">Words: 0 | Characters: 0</div>
         <div id="preview" class="preview"></div>
@@ -47,6 +57,7 @@
     <script defer src="Scripts/JS/history.js"></script>
     <script defer src="Scripts/JS/saveStatus.js"></script>
     <script defer src="Scripts/JS/notifications.js"></script>
+    <script defer src="Scripts/JS/findReplace.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.12/marked.min.js"></script> -->
 </body>
 </html>
