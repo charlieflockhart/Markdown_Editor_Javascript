@@ -29,6 +29,7 @@ function importFile(event, type) {
             markdownInput.value = markdown; // Restore Markdown syntax
             preview.innerHTML = content; // Show original HTML in the preview
         }
+        showNotification(`✅ Successfully imported ${type.toUpperCase()} file!`);
     };
     
     reader.readAsText(file);
