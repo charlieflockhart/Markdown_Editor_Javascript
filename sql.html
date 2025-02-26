@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel to SQL</title>
-    <link rel="stylesheet" href="Scripts/CSS/SQL_Style/style.css">
+    <link rel="stylesheet" href="Scripts/CSS/Markdown_Style/style.css">
 </head>
 <body>
     <div class="container">
         <button onclick="window.location.href='index.html';">Back to Index</button>
+        <button id="theme-toggle">Toggle Dark Mode</button>
         <h1>Excel to SQL</h1>
         
         <!-- Import File Buttons -->
         <h2>Import CSV</h2>
-        <input type="file" id="importCSV" onchange="importCSV(event)">
+        <input style="display: none;" type="file" id="importCSV" onchange="importCSV(event)">
         <button onclick="document.getElementById('importCSV').click()">Import CSV</button>
         <button onclick="exportTableToCSV()">Export Table to CSV</button>
 
@@ -32,5 +33,6 @@
     <script defer src="Scripts/JS/SQL_Scripts/csv_Table.js"></script>
     <script defer src="Scripts/JS/SQL_Scripts/import.js"></script>
     <script defer src="Scripts/JS/SQL_Scripts/export.js"></script>
+    <script defer src="Scripts/JS/SQL_Scripts/theme.js"></script>
 </body>
 </html>
